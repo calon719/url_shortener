@@ -1,0 +1,16 @@
+.modal.active {
+  display: block;
+  animation-name: modal-fade;
+  animation-duration: 1s;
+}
+
+.bi.bi-check2-circle {
+  font-size: 5rem;
+}
+
+@keyframes modal-fade {
+  0% { transform: scale(0); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1); }
+  100% { transform: scale(0); }
+}

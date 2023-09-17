@@ -1,29 +1,18 @@
-<div class="container py-5 d-flex flex-column align-items-center">
-  <h1 class="my-5">URL Shortener</h1>
-  <img
-    class="mb-5"
-    src="/images/ExportedContentImage_00.png"
-    alt="icon"
-    style="max-width: 250px"
+<form
+  class="d-flex flex-column align-items-center"
+  action="/success"
+  method="post"
+>
+  <input
+    id="url"
+    class="form-control mb-3"
+    type="text"
+    name="url"
+    placeholder="Input URL here"
   />
-
-  <form
-    class="d-flex flex-column align-items-center"
-    action="/"
-    method="post"
-  >
-    <input
-      id="url"
-      class="form-control mb-3"
-      type="text"
-      name="url"
-      placeholder="Input URL here"
-    />
-    <input
-      class="btn btn-outline-primary px-5"
-      type="submit"
-      value="Shorten"
-    />
-  </form>
-
-</div>
+  <input
+    class="btn btn-outline-primary px-5"
+    type="submit"
+    value="Shorten"
+  />
+</form>
