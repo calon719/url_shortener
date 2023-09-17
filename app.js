@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.post('/success', (req, res) => {
   const { url } = req.body;
   const existedURL = urlList.find((item) => item.url === url);
-  let shortenedURL = 'https://localhost/';
+  let shortenedURL = `http://localhost:${port}/`;
 
   if (existedURL === undefined) {
     const id = Math.random().toString(36).substring(2, 7);
@@ -47,6 +47,12 @@ app.post('/success', (req, res) => {
 
 app.get('/:id', (req, res) => {
   const { id } = req.params;
+  const hasURL = urlList.some((item) => item.id === id);
+
+  if (hasURL) {
+    const { url } = urlList.find((item) => item.id === id);
+    res.redirect(url);
+  }
 });
 
 app.listen(port, () => {
